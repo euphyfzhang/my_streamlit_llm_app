@@ -3,5 +3,3 @@ snowflake-connector-python
 streamlit
 openai
 langchain
-SQLAlchemy
-mysqlclient
