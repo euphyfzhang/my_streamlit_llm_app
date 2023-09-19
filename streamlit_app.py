@@ -21,8 +21,6 @@ with st.form('my_form'):
 
 st.header('Frosty LLM Chatbox', divider = 'rainbow')
 
-openai.api_key = openai_api_key
-
 conn = st.experimental_connection("snowpark")
 df = conn.query("select current_warehouse()")
 df
