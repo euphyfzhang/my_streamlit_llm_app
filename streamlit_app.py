@@ -19,8 +19,7 @@ with st.form('my_form'):
         generate_response(text)
 		
 
-st.header('Frosty LLM Chatbox', divider = 'rainbow')
+st.header('Frosty LLM Chatbot', divider = 'rainbow')
 
 conn = st.experimental_connection("snowpark")
 df = conn.query("select current_warehouse()")
-df
