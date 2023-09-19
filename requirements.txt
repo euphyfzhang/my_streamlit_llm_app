@@ -4,4 +4,4 @@ openai
 langchain
 snowflake-snowpark-python
 pandas
-pyarrow
+pyarrow=10.1.0
