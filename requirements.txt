@@ -4,3 +4,4 @@ streamlit
 openai
 langchain
 snowflake-snowpark-python
+pandas
