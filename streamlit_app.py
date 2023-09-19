@@ -21,3 +21,4 @@ with st.form('my_form'):
 st.header('Frosty LLM Chatbot', divider = 'rainbow')
 
 conn = st.experimental_connection("snowpark")
+df = conn.query("select current_warehouse()")
