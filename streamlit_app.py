@@ -1,7 +1,8 @@
 import streamlit as st
 from langchain.llms import OpenAI
 
-st.title('🦜🔗 Quickstart App')
+
+st.header('Text Submit Chatbox App', divider = 'rainbow')
 
 openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 
@@ -16,3 +17,12 @@ with st.form('my_form'):
         st.warning('Please enter your OpenAI API key!', icon='⚠')
     if submitted and openai_api_key.startswith('sk-'):
         generate_response(text)
+		
+
+st.header('Frosty LLM Chatbox', divider = 'rainbow')
+
+openai.api_key = openai_api_key
+
+conn = st.experimental_connection("snowpark")
+df = conn.query("select current_warehouse()")
+df
