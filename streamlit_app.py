@@ -21,6 +21,6 @@ with st.form('my_form'):
 
 st.header('Frosty LLM Chatbox', divider = 'rainbow')
 
-conn = st.experimental_connection("snowpark")
+conn = st.experimental_connection("TORONTO_CRIME_DB", type = "sql")
 df = conn.query("select current_warehouse()")
 df
