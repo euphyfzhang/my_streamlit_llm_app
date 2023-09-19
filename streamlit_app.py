@@ -1,7 +1,6 @@
 import streamlit as st
 from langchain.llms import OpenAI
 
-
 st.header('Text Submit Chatbox App', divider = 'rainbow')
 
 openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
@@ -22,4 +21,3 @@ with st.form('my_form'):
 st.header('Frosty LLM Chatbot', divider = 'rainbow')
 
 conn = st.experimental_connection("snowpark")
-df = conn.query("select current_warehouse()")
