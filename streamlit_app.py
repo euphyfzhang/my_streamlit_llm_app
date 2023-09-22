@@ -22,3 +22,4 @@ st.header('Frosty LLM Chatbot', divider = 'rainbow')
 
 conn = st.experimental_connection("snowpark")
 df = conn.query("select current_warehouse()", ttl = 600)
+st.write(df)
