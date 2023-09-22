@@ -3,3 +3,4 @@ streamlit
 openai
 langchain
 snowflake-snowpark-python
+pyarrow==10.0.1
