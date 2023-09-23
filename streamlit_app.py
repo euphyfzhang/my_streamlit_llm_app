@@ -25,4 +25,4 @@ df = conn.query("select distinct primary_type from TORONTO_CRIME_DB.RAW.CHICAGO_
 
 for i in range(df.size):
 	itext = df.iloc[i].values[0]
-	st.text(itext , generate_response(f'What is the meaning of {itext}?'))
+	generate_response(f'What is the meaning of {itext}?')
