@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 from langchain.llms import OpenAI
 
 st.header('Text Submit Chatbox App', divider = 'rainbow')
@@ -28,13 +29,7 @@ st.header('Frosty LLM Chatbot', divider = 'rainbow')
 conn = st.experimental_connection("snowpark")
 df = conn.query("select primary_type from TORONTO_CRIME_DB.RAW.SUMMARY_CRIME_COUNTS;", ttl = 600)
 
-st.dataframe(
-df,
-column_config={
-	"primary_type": "Crime Primary Type",
-},
-hide_index=True,
-)
+df.map(lambda x : generate_response_withkey(f'What is the meaning of {x} in term of crime?'))
 
 """
 itext = f'What is the meaning of {df.iloc[0].values[0]} in term of crime?'
