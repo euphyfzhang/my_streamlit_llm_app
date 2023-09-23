@@ -21,5 +21,8 @@ with st.form('my_form'):
 st.header('Frosty LLM Chatbot', divider = 'rainbow')
 
 conn = st.experimental_connection("snowpark")
-df = conn.query("select current_warehouse()", ttl = 600)
-st.write(df)
+df = conn.query("select distinct primary_type from TORONTO_CRIME_DB.RAW.CHICAGO_CRIMES;", ttl = 600)
+
+dfv = df.values
+for i in range(len(dfv)):
+	dfv[i]
