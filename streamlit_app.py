@@ -33,4 +33,4 @@ itext = f'What is the meaning of {df.iloc[0].values[0]}?'
 
 #generate_response_withkey(itext)
 
-st.secrets[.keys()
+st.secrets.keys()
