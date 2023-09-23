@@ -25,4 +25,5 @@ df = conn.query("select distinct primary_type from TORONTO_CRIME_DB.RAW.CHICAGO_
 
 
 itext = f'What is the meaning of {df.iloc[0].values[0]}?'
-generate_response(itext)
+itext 
+#generate_response(itext)
