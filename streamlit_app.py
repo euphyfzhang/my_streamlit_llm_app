@@ -21,7 +21,8 @@ with st.form('my_form'):
 st.header('Frosty LLM Chatbot', divider = 'rainbow')
 
 conn = st.experimental_connection("snowpark")
-df = conn.query("select distinct primary_type from TORONTO_CRIME_DB.RAW.CHICAGO_CRIMES;", ttl = 600)
+df = conn.query("select top 3 distinct primary_type from TORONTO_CRIME_DB.RAW.CHICAGO_CRIMES;", ttl = 600)
 
 for i in range(df.size):
-	st.text(df.iloc[i].values[0])
+	itext = df.iloc[i].values[0]
+	generate_response(itext, f'What is the meaning of {itext}?'))
