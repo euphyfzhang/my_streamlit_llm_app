@@ -31,6 +31,5 @@ df = conn.query("select primary_type from TORONTO_CRIME_DB.RAW.SUMMARY_CRIME_COU
 
 #df.map(lambda x : generate_response_withkey(f'What is the meaning of {x} in term of crime?'))
 
-option_pt = st.selectbox("The meaning of the type in crime.", df)
+option_pt = st.selectbox("The meaning of the following crime type.", df)
 generate_response_withkey(f'What is the meaning of {option_pt} in term of crime?')
-
