@@ -26,9 +26,20 @@ with st.form('my_form'):
 st.header('Frosty LLM Chatbot', divider = 'rainbow')
 
 conn = st.experimental_connection("snowpark")
-df = conn.query("select distinct primary_type from TORONTO_CRIME_DB.RAW.CHICAGO_CRIMES LIMIT 3;", ttl = 600)
+df = conn.query("select primary_type from TORONTO_CRIME_DB.RAW.SUMMARY_CRIME_COUNTS;", ttl = 600)
 
+itext = df.iloc[0].values[0]
+options = st.multiselect('Select the primary type(s)', itext)
+	st.dataframe(
+    df,
+    column_config={
+        "primary_type": "Crime Primary Type",
+    },
+    hide_index=True,
+	)
 
-itext = f'What is the meaning of {df.iloc[0].values[0]}?'
+"""
+itext = f'What is the meaning of {df.iloc[0].values[0]} in term of crime?'
 
 generate_response_withkey(itext)
+"""
