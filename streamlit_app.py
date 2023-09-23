@@ -24,4 +24,4 @@ conn = st.experimental_connection("snowpark")
 df = conn.query("select distinct primary_type from TORONTO_CRIME_DB.RAW.CHICAGO_CRIMES;", ttl = 600)
 
 for i in range(df.size):
-	st.text(df.iloc[i])
+	st.text(df.iloc[i].values[0])
