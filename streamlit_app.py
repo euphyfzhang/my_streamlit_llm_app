@@ -10,7 +10,7 @@ def generate_response(input_text):
     st.info(llm(input_text))
 """
 def generate_response_withkey(input_text):
-	llm = OpenAI(temperature=0.7, openai_api_key= st.secrets["openaiapikey"])
+	llm = OpenAI(temperature=0.7, openai_api_key= st.secrets["api_key"])
 	st.info(llm(input_text))
 """
 
@@ -32,5 +32,3 @@ df = conn.query("select distinct primary_type from TORONTO_CRIME_DB.RAW.CHICAGO_
 itext = f'What is the meaning of {df.iloc[0].values[0]}?'
 
 #generate_response_withkey(itext)
-
-st.text(st.secrets["api_key"])
