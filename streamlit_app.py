@@ -25,4 +25,4 @@ df = conn.query("select distinct primary_type from TORONTO_CRIME_DB.RAW.CHICAGO_
 
 dfv = df.values
 for i in range(len(dfv)):
-	dfv[i]
+	dfv[i].value
