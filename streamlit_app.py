@@ -8,10 +8,11 @@ openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 def generate_response(input_text):
     llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
     st.info(llm(input_text))
-
+"""
 def generate_response_withkey(input_text):
 	llm = OpenAI(temperature=0.7, openai_api_key= st.secrets["openaiapikey"])
 	st.info(llm(input_text))
+"""
 
 with st.form('my_form'):
     text = st.text_area('Enter text:', 'What are the three key pieces of advice for learning how to code?')
@@ -30,4 +31,6 @@ df = conn.query("select distinct primary_type from TORONTO_CRIME_DB.RAW.CHICAGO_
 
 itext = f'What is the meaning of {df.iloc[0].values[0]}?'
 
-generate_response_withkey(itext)
+#generate_response_withkey(itext)
+
+st.secrets["openaiapikey"]
