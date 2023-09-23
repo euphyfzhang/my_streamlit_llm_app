@@ -24,5 +24,5 @@ conn = st.experimental_connection("snowpark")
 df = conn.query("select distinct primary_type from TORONTO_CRIME_DB.RAW.CHICAGO_CRIMES LIMIT 1;", ttl = 600)
 
 
-itext = f'What is the meaning of {df.iloc[i].values[0]}?'
+itext = f'What is the meaning of {df.iloc[0].values[0]}?'
 generate_response(itext)
