@@ -29,10 +29,7 @@ st.header('Frosty LLM Chatbot', divider = 'rainbow')
 conn = st.experimental_connection("snowpark")
 df = conn.query("select primary_type from TORONTO_CRIME_DB.RAW.SUMMARY_CRIME_COUNTS;", ttl = 600)
 
-df.map(lambda x : generate_response_withkey(f'What is the meaning of {x} in term of crime?'))
+#df.map(lambda x : generate_response_withkey(f'What is the meaning of {x} in term of crime?'))
 
-"""
-itext = f'What is the meaning of {df.iloc[0].values[0]} in term of crime?'
+option_pt = st.selectbox("The meaning of the type in crime.", df.columns)
 
-generate_response_withkey(itext)
-"""
