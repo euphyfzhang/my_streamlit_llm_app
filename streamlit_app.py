@@ -23,6 +23,5 @@ st.header('Frosty LLM Chatbot', divider = 'rainbow')
 conn = st.experimental_connection("snowpark")
 df = conn.query("select distinct primary_type from TORONTO_CRIME_DB.RAW.CHICAGO_CRIMES;", ttl = 600)
 
-dfv = df.values
-for i in range(len(dfv)):
-	dfv.iloc[i]
+for i in range(df.size):
+	df.iloc[i]
