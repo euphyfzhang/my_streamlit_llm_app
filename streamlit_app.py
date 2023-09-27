@@ -37,8 +37,10 @@ prompt_q = st.text_area('Please enter your question.')
 sql_prompt = 'Generate a sql statement of "' + prompt_q + '" in table DEMO_TABLE.'
 prompt_resp = generate_response_withkey(sql_prompt)
 
-df_sqlprompt = conn.query(prompt_resp, ttl=600)
+prompt_resp
 
-df_sqlprompt
+if prompt_resp :
+	df_sqlprompt = conn.query(prompt_resp, ttl=600)
+	df_sqlprompt
 
 
