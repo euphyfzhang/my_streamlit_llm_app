@@ -34,7 +34,7 @@ df
 
 prompt_q = st.text_area('Please enter your question.')
 
-sql_prompt = 'Generate a sql statement of "' + prompt_q + '" in table DEMO_TABLE.'
+sql_prompt = 'Generate a sql statement of "' + prompt_q + '" in table DEMO_TABLE with columns (ID, EMPLOYEE_NAME, JOB_TITLE, DATE_OF_HIRE, MANAGER_NAME).'
 prompt_resp = generate_response_withkey(sql_prompt)
 
 prompt_resp
