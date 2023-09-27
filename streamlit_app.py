@@ -39,6 +39,6 @@ prompt_resp = generate_response_withkey(sql_prompt)
 
 df_sqlprompt = conn.query(prompt_resp, ttl=600)
 
-df
+df_sqlprompt
 
 
