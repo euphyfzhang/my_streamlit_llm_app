@@ -1,0 +1,9 @@
+[connections.snowpark]
+user = "yf2zhang3"
+password = "mcYeonBi1212@"
+warehouse = "COMPUTE_WH"
+role = "ACCOUNTADMIN"
+account = "xlbbczn-oq64500"
+database = "TORONTO_CRIME_DB"
+schema = "RAW"
+client_session_keep_alive = true
