@@ -28,12 +28,13 @@ st.header('Frosty LLM Chatbot', divider = 'rainbow')
 
 conn = st.experimental_connection("snowpark")
 df = conn.query("select * from DEMO_TABLE;", ttl = 600)
+df
 
-#df.map(lambda x : generate_response_withkey(f'What is the meaning of {x} in term of crime?'))
+# df.map(lambda x : generate_response_withkey(f'What is the meaning of {x} in term of crime?'))
 
 prompt_q = st.text_area('Please enter your question.')
 
-sql_prompt = 'Generate a sql statement of "' + promot_q + '" in table DEMO_TABLE.'
+sql_prompt = 'Generate a sql statement of "' + prompt_q + '" in table DEMO_TABLE.'
 prompt_resp = generate_response_withkey(sql_prompt)
 
 df_sqlprompt = conn.query(prompt_resp, ttl=600)
